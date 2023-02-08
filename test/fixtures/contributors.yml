@@ -11,12 +11,11 @@
 #  updated_at  :datetime         not null
 #
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+<% 5.times do |n| %>
+  <%="contributor_#{n}" %>:
+    email: <%= Faker::Internet.email %>
+    give_credit: <%= n.even? %>
+    name: <%= Faker::Name.unique.name %>
+    url:  <%= Faker::Internet.url %>
+    entry: <%= "entry_#{n}" %>
+<% end %>
