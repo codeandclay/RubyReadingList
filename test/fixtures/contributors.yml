@@ -9,10 +9,19 @@
 #  url         :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  entry_id    :bigint
+#
+# Indexes
+#
+#  index_contributors_on_entry_id  (entry_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (entry_id => entries.id)
 #
 
 <% 5.times do |n| %>
-  <%="contributor_#{n}" %>:
+  <%="contributor_#{n+1}" %>:
     email: <%= Faker::Internet.email %>
     give_credit: <%= n.even? %>
     name: <%= Faker::Name.unique.name %>

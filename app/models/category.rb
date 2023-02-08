@@ -9,4 +9,8 @@
 #  updated_at    :datetime         not null
 #
 class Category < ApplicationRecord
+  has_many :entries
+
+  validates_presence_of :plural_name, :singular_name
+  validates :plural_name, :singular_name, uniqueness: true
 end

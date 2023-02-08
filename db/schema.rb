@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_08_154449) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_08_173445) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_08_154449) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_authors_on_name", unique: true
+  end
+
+  create_table "authorships", force: :cascade do |t|
+    t.bigint "author_id"
+    t.bigint "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_authorships_on_author_id"
+    t.index ["entry_id"], name: "index_authorships_on_entry_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -35,6 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_08_154449) do
     t.boolean "give_credit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "entry_id"
+    t.index ["entry_id"], name: "index_contributors_on_entry_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -44,6 +54,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_08_154449) do
     t.jsonb "metadata"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_entries_on_category_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "entry_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_taggings_on_entry_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -52,4 +73,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_08_154449) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "authorships", "authors"
+  add_foreign_key "authorships", "entries"
+  add_foreign_key "contributors", "entries"
+  add_foreign_key "entries", "categories"
+  add_foreign_key "taggings", "entries"
+  add_foreign_key "taggings", "tags"
 end
