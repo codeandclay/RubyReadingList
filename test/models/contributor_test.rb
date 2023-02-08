@@ -22,7 +22,13 @@
 require "test_helper"
 
 class ContributorTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @contributor = contributors.first
+  end
+
+  test "normalizes email addresses" do
+    @contributor.update(email: " uSer@exaMPLE.COM ")
+
+    assert_equal "user@example.com", @contributor.email
+  end
 end

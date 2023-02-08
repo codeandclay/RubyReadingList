@@ -21,4 +21,6 @@
 #
 class Contributor < ApplicationRecord
   belongs_to :entry
+
+  before_save { self.email = email.downcase.strip }
 end
