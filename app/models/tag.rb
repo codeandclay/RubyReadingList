@@ -13,4 +13,6 @@ class Tag < ApplicationRecord
 
   validates_presence_of :name
   validates :name, uniqueness: true
+
+  before_save { self.name = name.downcase }
 end

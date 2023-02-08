@@ -13,4 +13,7 @@ class Category < ApplicationRecord
 
   validates_presence_of :plural_name, :singular_name
   validates :plural_name, :singular_name, uniqueness: true
+
+  before_save { self.plural_name = plural_name.downcase.capitalize }
+  before_save { self.singular_name = singular_name.downcase.capitalize }
 end

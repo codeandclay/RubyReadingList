@@ -10,7 +10,13 @@
 require "test_helper"
 
 class TagTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @tag = tags.first
+  end
+
+  test "tags are downcased" do
+    @tag.update(name: "ruBy")
+
+    assert_equal "ruby", @tag.name
+  end
 end
