@@ -16,4 +16,10 @@ class Category < ApplicationRecord
 
   before_save { self.plural_name = plural_name.downcase.capitalize }
   before_save { self.singular_name = singular_name.downcase.capitalize }
+
+  def name
+    return plural_name if (entries.count > 1 || entries.count.zero?)
+
+    singular_name
+  end
 end

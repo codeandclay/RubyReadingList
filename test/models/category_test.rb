@@ -21,4 +21,16 @@ class CategoryTest < ActiveSupport::TestCase
     assert_equal "Categories", @category.plural_name
     assert_equal "Category", @category.singular_name
   end
+
+  test "returns plural name correctly" do
+    assert_equal "Books", @category.name
+
+    assert_equal "Tapes", categories(:category_2).name
+  end
+
+  test "returns singular name correctly" do
+    Entry.first.update(category: categories(:category_3))
+
+    assert_equal "Article", categories(:category_3).name
+  end
 end
