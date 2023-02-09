@@ -4,7 +4,7 @@
       <li>
         <a href="#" class="foreground-white">
           <% next if cat.empty? %>
-          <%= "#{cat.plural_name} (#{cat.entry_count})" %>
+          <%= "#{cat.entry_count} #{cat.name}" %>
           </a>
         </li>
       <% end %>
