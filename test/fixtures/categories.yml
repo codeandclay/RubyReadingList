@@ -10,5 +10,13 @@
 #
 
 category_1:
-  plural_name: "books"
-  singular_name: "book"
+  plural_name: "Books"
+  singular_name: "Book"
+
+category_2:
+  plural_name: "Tapes"
+  singular_name: "Tape"
+
+category_3:
+  plural_name: "Articles"
+  singular_name: "Article"
