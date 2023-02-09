@@ -1,0 +1,10 @@
+.masthead {
+  display: flex;
+  flex-direction: column;
+  h1, img, p {
+    align-self: center;
+  }
+  p {
+    text-align: center;
+  }
+}

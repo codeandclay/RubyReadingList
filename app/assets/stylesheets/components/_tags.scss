@@ -1,0 +1,24 @@
+.tags {
+  list-style: none;
+
+  .tags__tag {
+    display: inline-block;
+    font-size: var(--font-size-s);
+    background-color: var(--color-tertiary);
+    border: 1px solid var(--color-tertiary);
+  }
+
+  .tags__category {
+    background-color: var(--color-background);
+    border-color: var(--color-dark);
+  }
+
+  .tag__selected {
+    color: var(--color-tertiary);
+    background-color: var(--color-dark);
+  }
+
+  .tags__tag:hover {
+    cursor: pointer;
+  }
+}

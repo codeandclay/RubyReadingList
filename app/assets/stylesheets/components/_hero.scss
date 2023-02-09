@@ -1,0 +1,29 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xxxxl) var(--space-m);
+  margin: var(--space-xxl) 0;
+}
+
+.hero > * {
+  margin-block: 1rem;
+}
+
+.hero > :first-child:not(.hero__middle) {
+  margin-block-start: 0;
+}
+
+.hero > :last-child:not(.hero__middle) {
+  margin-block-end: 0;
+  text-align: center;
+}
+
+.hero > .hero__middle {
+  align-self: center;
+  margin-block: auto;
+  font-size: var(--font-size-xxxl);
+
+  h1 {
+    font-size: var(--font-size-cover);
+  }
+}

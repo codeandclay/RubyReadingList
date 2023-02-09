@@ -1,0 +1,29 @@
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  padding: var(--space-xxxxl) var(--space-m);
+}
+
+.cover > * {
+  margin-block: 1rem;
+}
+
+.cover > :first-child:not(.cover__middle) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child:not(.cover__middle) {
+  margin-block-end: 0;
+  text-align: center;
+}
+
+.cover > .cover__middle {
+  align-self: center;
+  margin-block: auto;
+  font-size: var(--font-size-xxxl);
+
+  h1 {
+    font-size: var(--font-size-cover);
+  }
+}

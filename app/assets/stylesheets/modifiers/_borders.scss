@@ -1,0 +1,11 @@
+.rounded {
+  border-radius: var(--border-radius);
+}
+
+.border {
+  border: 1px dashed var(--color-dark);
+}
+
+.border-top {
+  border-width: 10px 0 0 0;
+}

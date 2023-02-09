@@ -1,0 +1,35 @@
+.entry {
+  margin: var(--space-xxxl) 0 0 0;
+
+  &:first-of-type {
+    margin-top: var(--space-xxxl);
+  }
+}
+
+.entry__info {
+  border-style: dashed;
+  border-width: 0 0 1px 0;
+  border-color: var(--color-glint);
+
+  padding-bottom: var(--space-xxxl);
+  max-width: 45rem;
+
+  & > * {
+  }
+
+  .entry__link {
+    font-size: var(--font-size-s);
+  }
+
+  p, ul {
+    font-size: var(--font-size-l);
+  }
+
+  p, ul {
+    margin-top: var(--space-s);
+  }
+
+  ul {
+    list-style: inside;
+  }
+}
