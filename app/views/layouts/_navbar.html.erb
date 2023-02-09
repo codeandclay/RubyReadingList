@@ -1,8 +1,12 @@
 <div class="navbar full-bleed cover__bottom background-dark" style="position: fixed">
   <ul class="inline-list foreground-white">
-    <li><a href="#" class="foreground-white">Category</a></li>
-    <li><a href="#" class="foreground-white">Category</a></li>
-    <li><a href="#" class="foreground-white">Category</a></li>
-    <li><a href="#" class="foreground-white">Category</a></li>
+    <% Category.all.each do |cat| %>
+      <li>
+        <a href="#" class="foreground-white">
+          <% next if cat.empty? %>
+          <%= "#{cat.plural_name} (#{cat.entry_count})" %>
+          </a>
+        </li>
+      <% end %>
   </ul>
 </div>
