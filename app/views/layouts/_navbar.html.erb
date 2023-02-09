@@ -1,9 +1,9 @@
 <div class="navbar full-bleed cover__bottom background-dark" style="position: fixed">
   <ul class="inline-list foreground-white">
     <% Category.all.each do |cat| %>
+      <% next if cat.empty? %>
       <li>
         <a href="#" class="foreground-white">
-          <% next if cat.empty? %>
           <%= "#{cat.entry_count} #{cat.name}" %>
           </a>
         </li>
