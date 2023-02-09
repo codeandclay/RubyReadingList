@@ -15,4 +15,8 @@ class Tag < ApplicationRecord
   validates :name, uniqueness: true
 
   before_save { self.name = name.downcase }
+
+  def entry_count
+    entries.count
+  end
 end
