@@ -3,6 +3,7 @@
 # Table name: categories
 #
 #  id            :bigint           not null, primary key
+#  entries_count :integer          default(0)
 #  plural_name   :string           not null
 #  singular_name :string           not null
 #  created_at    :datetime         not null

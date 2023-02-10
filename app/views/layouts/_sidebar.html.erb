@@ -1,0 +1,13 @@
+<div id="sidebar" class="background-primary">
+  <div class="masthead margin-top-xl">
+    <img src="./white_ruby.svg" style="width: var(--font-size-xxxl)" alt="">
+    <h1 class="foreground-white margin-top-s" style="font-size:var(--font-size-xxl)">A Ruby Reading List</h1>
+    <p class="foreground-white margin-top-s" style="font-size: var(--font-size-l)">A curated list of resources for rubyists of all levels.</p>
+  </div>
+
+  <div  style="top: 3.5rem">
+    <ul class="tags margin-top-l">
+      <%= render Tag.includes(:entries).first(10), style: "margin-top-xs" %>
+    </ul>
+  </div>
+</div>

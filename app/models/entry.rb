@@ -28,7 +28,7 @@ class Entry < ApplicationRecord
 
   has_many :contributors
 
-  belongs_to :category
+  belongs_to :category, counter_cache: :entries_count
 
   validates_presence_of :authors, :description, :tags, :title, :url
 end

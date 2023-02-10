@@ -1,12 +1,5 @@
 <div class="navbar full-bleed cover__bottom background-dark" style="position: fixed">
   <ul class="inline-list foreground-white">
-    <% Category.all.each do |cat| %>
-      <% next if cat.empty? %>
-      <li>
-        <a href="#" class="foreground-white">
-          <%= "#{cat.entry_count} #{cat.name}" %>
-          </a>
-        </li>
-      <% end %>
+    <%= render Category.includes(:entries) %>
   </ul>
 </div>

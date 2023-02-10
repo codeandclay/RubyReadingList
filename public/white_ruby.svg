@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 216">
+  <defs>
+    <style>
+      .a {
+        fill: #fff;
+      }
+
+      .b {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 12px;
+      }
+    </style>
+  </defs>
+  <title>white_ruby</title>
+  <path class="a" d="M211.74,12.71l60,60-127,127-127-127,60-60H211.74m5-12h-144l-72,72,144,144,144-144-72-72Z" transform="translate(-0.71 -0.71)"/>
+  <path class="a" d="M144.71,17.68l57.4,57.4-57.4,114.8L87.31,75.08l57.4-57.4m0-17-72,72,72,144,72-144-72-72Z" transform="translate(-0.71 -0.71)"/>
+  <line class="b" x1="7" y1="72" x2="281" y2="72"/>
+</svg>

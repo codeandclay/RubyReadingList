@@ -1,0 +1,11 @@
+<div class="entry flex flex-center">
+  <div class="entry__info">
+    <%= render partial: "url", locals: { url: entry.url } %>
+    <h1 class="margin-top-xs"><a href="#" class="foreground-dark"><%= entry.title %></a></h1>
+    <%= render partial: "description", locals: { description: entry.description } %>
+    <ul class="tags margin-top-s">
+      <%= render partial: "categories/entry_category", locals: { category: entry.category } %>
+      <%= render entry.tags %>
+    </ul>
+  </div>
+</div>

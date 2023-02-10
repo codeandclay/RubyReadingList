@@ -1,0 +1,4 @@
+<a class="entry__link background-primary foreground-white padding-xxxs rounded" href="<%= url %>">
+<%= URI.parse(url)
+       .then { |uri| "#{uri.host}#{uri.path}" } %>
+</a>
