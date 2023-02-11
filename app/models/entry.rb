@@ -31,4 +31,20 @@ class Entry < ApplicationRecord
   belongs_to :category, counter_cache: :entries_count
 
   validates_presence_of :authors, :description, :tags, :title, :url
+
+  scope :by_category, ->(category) do
+    return if category.nil?
+
+    joins(:category).where(
+      categories: { plural_name: category.capitalize }
+    )
+  end
+
+  scope :by_tags, ->(tags) do
+    return if tags.nil?
+
+    joins(:tags).where(
+      tags: { name: tags }
+    )
+  end
 end

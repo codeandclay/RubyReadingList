@@ -1,1 +1,5 @@
-<li class="tags__tag padding-xxxs rounded <%= style ||= '' %>"><%= tag.name %></li>
+<li class="tags__tag padding-xxxs rounded <%= style ||= '' %>"><%=
+
+  link_to tag.name, entries_path, class: "foreground-dark"
+
+%></li>

@@ -21,16 +21,20 @@ class Category < ApplicationRecord
   attribute :name, :string
 
   def entry_count
-    entries.count
+    entries.size
   end
 
   def empty?
-    entries.count.zero?
+    entries.size.zero?
   end
 
   def name
-    return plural_name if (entries.count > 1 || entries.count.zero?)
+    return plural_name if (entries.size > 1 || entries.size.zero?)
 
     singular_name
+  end
+
+  def slug
+    plural_name.downcase
   end
 end
