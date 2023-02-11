@@ -1,5 +1,5 @@
-<li class="tags__tag padding-xxxs rounded <%= style ||= '' %>"><%=
-
-  link_to tag.name, entries_path, class: "foreground-dark"
-
+<% selected_style = " tag__selected" if @tags.include? tag.name %>
+<li class="tags__tag padding-xxxs rounded <%= style ||= '' %> <%= selected_style %>">
+<%=
+  link_to "#{tag.name}", entries_path(category: @category, tags: [tag.name])
 %></li>

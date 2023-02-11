@@ -41,7 +41,7 @@ class Entry < ApplicationRecord
   end
 
   scope :by_tags, ->(tags) do
-    return if tags.nil?
+    return if tags.nil? || tags.empty?
 
     joins(:tags).where(
       tags: { name: tags }

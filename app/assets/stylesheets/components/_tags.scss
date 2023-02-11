@@ -6,6 +6,9 @@
     font-size: var(--font-size-s);
     background-color: var(--color-tertiary);
     border: 1px solid var(--color-tertiary);
+    a {
+      color: var(--color-dark)
+    }
   }
 
   .tags__category {
@@ -14,7 +17,9 @@
   }
 
   .tag__selected {
-    color: var(--color-tertiary);
+    a {
+      color: var(--color-tertiary);
+    }
     background-color: var(--color-dark);
   }
 

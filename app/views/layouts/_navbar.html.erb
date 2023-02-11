@@ -1,5 +1,6 @@
 <div class="navbar full-bleed cover__bottom background-dark" style="position: fixed">
   <ul class="inline-list foreground-white">
+    <li><%= link_to "All (#{Entry.count})", entries_path, class: "foreground-light" %></li>
     <%= render Category.includes(:entries) %>
   </ul>
 </div>
