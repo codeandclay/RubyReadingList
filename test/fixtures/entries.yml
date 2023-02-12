@@ -30,4 +30,19 @@
       - <%= "author_#{[*1..5].sample}" %>
     category:  category_1
     tags: <%= [*1..[*1..5].sample].map.with_index { |x| "tag_#{x}" } %>
+    metadata: |
+      [
+        {
+          "key": "Author",
+          "value": "A N Author"
+        },
+        {
+          "key": "Publisher",
+          "value": "A Big Publisher"
+        },
+        {
+          "key": "ISBN",
+          "value": "978-3-16-148410-0"
+        }
+      ]
 <% end %>

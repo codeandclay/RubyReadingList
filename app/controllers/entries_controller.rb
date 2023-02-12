@@ -15,6 +15,11 @@ class EntriesController < ApplicationController
     @report = "#{category_part} #{entry_part}".strip << "."
   end
 
+  def show
+    @entry = Entry.find(params[:id])
+    @metadata = JSON.parse(@entry.metadata).map &:symbolize_keys
+  end
+
   def set_tags
     if params[:tags].nil?
       @tags = []

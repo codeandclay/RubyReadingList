@@ -1,0 +1,11 @@
+table {
+  tr:nth-child(even) {
+    background-color: var(--color-light);
+  }
+
+  .timestamp-row {
+    font-size: var(--font-size-xs);
+    background-color: var(--color-white);
+    font-weight: bold;
+  }
+}

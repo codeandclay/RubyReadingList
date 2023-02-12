@@ -6,7 +6,12 @@
     <ul class="tags margin-top-s">
       <%= render partial: "categories/entry_category", object: entry.category %>
       <%= render partial: entry.tags, locals: { selected_tags: @tags } %>
-      <li class="tags__tag tags__more-info padding-xxxs rounded "><a href="#">More info</a></li>
+      <li class="tags__tag tags__more-info padding-xxxs rounded "><%=
+        link_to "Show #{entry.category.singular_name} info",
+                entry_path(entry),
+                data: { turbo_frame: dom_id(entry) }
+      %></li>
     </ul>
+    <%= turbo_frame_tag entry %>
   </div>
 </div>

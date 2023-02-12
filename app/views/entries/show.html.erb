@@ -1,0 +1,17 @@
+<h1><%= @entry.title %></h1>
+
+<%= turbo_frame_tag @entry do %>
+  <table class="card metadata-card margin-top-l">
+    <% @metadata.each do |item| %>
+    <tr>
+      <td><%= item[:key] %></td>
+      <td><%= item[:value] %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td class="timestamp-row">
+        Added <%= @entry.created_at %>. Updated <%= @entry.updated_at %>.
+      </td>
+    </tr>
+  </table>
+<% end %>
