@@ -1,5 +1,11 @@
-<% selected_style = " tag__selected" if @tags.include? tag.name %>
+<%
+  is_selected = @tags.include? tag.name
+  tags = []
+  tags << tag.name unless is_selected
+%>
+
+<% selected_style = " tag__selected" if is_selected %>
 <li class="tags__tag padding-xxxs rounded <%= style ||= '' %> <%= selected_style %>">
 <%=
-  link_to "#{tag.name}", entries_path(category: @category, tags: [tag.name])
+  link_to "#{tag.name}", entries_path(category: @category, tags: tags)
 %></li>

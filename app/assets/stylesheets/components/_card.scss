@@ -5,3 +5,19 @@
 
   padding: var(--space-l);
 }
+
+.info-card {
+  margin-top: var(--space-xxxl);
+  max-width: 45rem;
+  justify-self: center;
+}
+
+.report-card {
+  padding: var(--space-xxxs);
+
+  background-color: var(--color-tertiary);
+  color: var(--color-dark);
+
+  font-size: var(--font-size-xs);
+  width: 100%;
+}

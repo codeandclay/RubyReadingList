@@ -5,7 +5,8 @@
     <%= render partial: "description", object: entry.description %>
     <ul class="tags margin-top-s">
       <%= render partial: "categories/entry_category", object: entry.category %>
-      <%= render entry.tags %>
+      <%= render partial: entry.tags, locals: { selected_tags: @tags } %>
+      <li class="tags__tag tags__more-info padding-xxxs rounded "><a href="#">More info</a></li>
     </ul>
   </div>
 </div>

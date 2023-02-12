@@ -1,0 +1,7 @@
+<% if report %>
+  <div class="flex flex-row flex-center">
+    <div class="card info-card report-card">
+      <strong><%= report %></strong> Last updated <%= Entry.last_updated %>.
+    </div>
+  </div>
+<% end %>

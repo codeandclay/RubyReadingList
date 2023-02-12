@@ -47,4 +47,8 @@ class Entry < ApplicationRecord
       tags: { name: tags }
     )
   end
+
+  def self.last_updated
+    Entry.order("created_at DESC").first.updated_at
+  end
 end
