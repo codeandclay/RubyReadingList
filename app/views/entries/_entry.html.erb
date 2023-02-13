@@ -1,7 +1,9 @@
 <div class="entry flex flex-center">
   <div class="entry__info">
     <%= render partial: "url", object: entry.url %>
-    <h1 class="margin-top-xs"><a href="#" class="foreground-dark"><%= entry.title %></a></h1>
+    <h1 class="margin-top-xs"><%=
+      link_to entry.title, entry.url, class: "foreground-dark"
+    %></h1>
     <%= render partial: "description", object: entry.description %>
     <ul class="tags margin-top-s">
       <%= render partial: "categories/entry_category", object: entry.category %>
