@@ -1,8 +1,11 @@
 .tags {
   list-style: none;
 
-  .tags__tag {
+  li {
     display: inline-block;
+  }
+
+  .tags__tag {
     font-size: var(--font-size-s);
     background-color: var(--color-tertiary);
     border: 1px solid var(--color-tertiary);
@@ -17,22 +20,19 @@
   }
 
   .tag__selected {
-    a {
-      color: var(--color-tertiary);
-    }
+    color: var(--color-tertiary);
     background-color: var(--color-dark);
     border: 1px solid var(--color-dark);
   }
 
   .tags__tag:hover {
     cursor: pointer;
+    text-decoration: underline;
   }
 
   .tags__more-info {
     background-color: var(--color-secondary);
     border: 1px solid var(--color-secondary);
-    a {
-      color: var(--color-white);
-     }
+    color: var(--color-white);
   }
 }

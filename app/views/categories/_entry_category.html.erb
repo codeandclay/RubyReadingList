@@ -1,3 +1,5 @@
-<li class="tags__tag tags__category padding-xxxs rounded"><%=
-link_to entry_category.name, entries_path(category: entry_category.slug, tags: @tags), class: "foreground-dark"
+<li><%=
+button_to entry_category.name,
+          entries_path(category: entry_category.slug, tags: @tags),
+          class: "tags__tag tags__category padding-xxxs rounded"
 %></li>

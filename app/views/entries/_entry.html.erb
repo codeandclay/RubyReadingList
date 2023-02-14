@@ -8,12 +8,26 @@
     <ul class="tags margin-top-s">
       <%= render partial: "categories/entry_category", object: entry.category %>
       <%= render partial: entry.tags, locals: { selected_tags: @tags } %>
-      <li class="tags__tag tags__more-info padding-xxxs rounded "><%=
-        link_to "Show #{entry.category.singular_name} info",
+      <li><%=
+        button_to "Show #{entry.category.singular_name} info",
                 entry_path(entry),
-                data: { turbo_frame: dom_id(entry) }
+                id: dom_id(entry, :show),
+                method: :get,
+                class: "tags__tag tags__more-info padding-xxxs rounded",
+                data: {
+                  turbo_frame: dom_id(entry),
+                  show_text: "Show #{entry.category.singular_name.downcase} info",
+                  show_path: entry_path(entry),
+                  hide_text: "Hide #{entry.category.singular_name.downcase} info",
+                  hide_path: entries_path
+                }
       %></li>
     </ul>
-    <%= turbo_frame_tag entry %>
+    <%= turbo_frame_tag entry, data: {
+      controller: "metadata-buttons",
+      action: "turbo:frame-load->metadata-buttons#toggle_button",
+      button: dom_id(entry, :show)
+    }
+    %>
   </div>
 </div>
