@@ -5,6 +5,7 @@
 #  id          :bigint           not null, primary key
 #  description :text             not null
 #  metadata    :jsonb
+#  state       :string           default("unpublished"), not null
 #  title       :string           not null
 #  url         :string           not null
 #  created_at  :datetime         not null
@@ -30,6 +31,7 @@
       - <%= "author_#{[*1..5].sample}" %>
     category:  category_1
     tags: <%= [*1..[*1..5].sample].map.with_index { |x| "tag_#{x}" } %>
+    state: :unpublished
     metadata: |
       [
         {

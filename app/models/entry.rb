@@ -5,6 +5,7 @@
 #  id          :bigint           not null, primary key
 #  description :text             not null
 #  metadata    :jsonb
+#  state       :string           default("unpublished"), not null
 #  title       :string           not null
 #  url         :string           not null
 #  created_at  :datetime         not null
@@ -20,6 +21,7 @@
 #  fk_rails_...  (category_id => categories.id)
 #
 class Entry < ApplicationRecord
+  STATES = %w(unpublished published deleted)
   has_many :authorships, dependent: :destroy
   has_many :authors, through: :authorships
 
@@ -50,5 +52,15 @@ class Entry < ApplicationRecord
 
   def self.last_updated
     Entry.order("created_at DESC").first.updated_at
+  end
+
+  STATES.each do |state|
+    define_method("#{state}?") do
+      self.state == state
+    end
+
+    define_method("#{state}!") do
+      self.update_attribute(:state, state)
+    end
   end
 end

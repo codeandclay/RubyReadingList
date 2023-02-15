@@ -5,6 +5,7 @@
 #  id          :bigint           not null, primary key
 #  description :text             not null
 #  metadata    :jsonb
+#  state       :string           default("unpublished"), not null
 #  title       :string           not null
 #  url         :string           not null
 #  created_at  :datetime         not null
@@ -22,7 +23,16 @@
 require "test_helper"
 
 class EntryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "an entry has a state" do
+    assert entries.first.unpublished?
+    refute entries.first.published?
+
+    entries.first.published!
+    assert entries.first.published?
+
+    refute entries.first.deleted?
+
+    entries.first.deleted!
+    assert entries.first.deleted?
+  end
 end
