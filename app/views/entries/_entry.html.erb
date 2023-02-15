@@ -9,7 +9,7 @@
       <%= render partial: "categories/entry_category", object: entry.category %>
       <%= render partial: entry.tags, locals: { selected_tags: @tags } %>
       <li><%=
-        button_to "Show #{entry.category.singular_name} info",
+        link_to "Show #{entry.category.singular_name} info",
                 entry_path(entry),
                 id: dom_id(entry, :show),
                 method: :get,

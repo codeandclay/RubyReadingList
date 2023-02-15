@@ -8,12 +8,12 @@ export default class extends Controller {
 
     if (this.element.childNodes.length >= 1) {
       button.innerHTML = button.getAttribute('data-hide-text')
-      button.parentElement.setAttribute('action', button.getAttribute('data-hide-path'))
+      button.setAttribute('href', button.getAttribute('data-hide-path'))
     }
 
     if (this.element.childNodes.length < 1) {
       button.innerHTML = button.getAttribute('data-show-text')
-      button.parentElement.setAttribute('action', button.getAttribute('data-show-path'))
+      button.setAttribute('href', button.getAttribute('data-show-path'))
     }
   }
 }

@@ -7,7 +7,8 @@
 <% selected_style = " tag__selected" if is_selected %>
 <li>
 <%=
-  button_to "#{tag.name}",
+  link_to "#{tag.name}",
     entries_path(category: @category, tags: tags),
-    class: "tags__tag padding-xxxs rounded #{style ||= ''} #{selected_style}"
+    method: :get,
+    class: "tags__tag padding-xxxs rounded #{style ||= ''} #{selected_style}" 
 %></li>
