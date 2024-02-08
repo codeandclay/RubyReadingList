@@ -20,6 +20,10 @@ class EntriesController < ApplicationController
     @metadata = JSON.parse(@entry.metadata).map &:symbolize_keys
   end
 
+  def new
+    @entry = Entry.new
+  end
+
   def set_tags
     if params[:tags].nil?
       @tags = []

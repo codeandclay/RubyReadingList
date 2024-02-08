@@ -1,0 +1,17 @@
+<div class="entries">
+  <%= simple_form_for entry, html: { class: "form" } do |f| %>
+
+    <%= form_error_notification(entry) %>
+
+    <%= f.input :title,
+                wrapper_html: { class: "" },
+                input_html: { autofocus: true } %>
+    <%= f.input :description,
+                wrapper_html: { class: "" } %>
+    <%= f.input :url,
+                wrapper_html: { class: "" } %>
+    <%= f.input :description,
+                wrapper_html: { class: "" } %>
+
+  <% end %>
+</div>
